@@ -1,3 +1,6 @@
+# Coding standards javascript
+
+
 # ES6 Coding Style
 
 This document is intended to provide consistent and helpful coding convention for ES6 code. It should be usable either in Node/IO.js or in the browser.
@@ -54,7 +57,7 @@ function Constructor() { ... }
 class Class { ... }
 const Namespace = {};
 
-if(__MACRO__) { ... }
+if (__MACRO__) { ... }
 const SOME_MAGIC_NUMBER = 1337;
 const {
   _privateMethod() {
@@ -358,12 +361,12 @@ n = n + 1;
 
 ```js
 // bad
-if(!!expr) {
+if (!!expr) {
   ...
 }
 
 // good
-if(expr) {
+if (expr) {
   ...
 }
 
@@ -391,12 +394,12 @@ someUntrustedFunction(!!expr);
 
 ```js
 // bad
-if(true) {
+if (true) {
     return 42;
 }
 
 // good
-if(true) {
+if (true) {
   return 42;
 }
 ```
@@ -405,12 +408,12 @@ if(true) {
 
 ```js
 // bad
-if(true){
+if (true){
   ...
 }
 
 // good
-if(true) {
+if (true) {
   ...
 }
 ```
@@ -423,7 +426,10 @@ function answer() { return 42;}
 const a = { a: 42};
 
 // good
-function answer() { return 42; }
+function answer() { 
+    return 42; 
+}
+
 const a = { a: 42 };
 ```
 
@@ -446,7 +452,7 @@ if (true) {
 }
 
 // good
-if(true) {
+if (true) {
   ...
 }
 ```
@@ -523,14 +529,14 @@ a.then(...)
 
 ```js
 // bad
-if(true)
+if (true)
  return 42;
-if(true) return 42;
+if (true) return 42;
 const id = (x) => { return x; };
 
 // good
-if(true) { return 42; }
-if(true) {
+if (true) { return 42; }
+if (true) {
   return 42;
 }
 const id = (x) => x;
@@ -589,16 +595,16 @@ const id = (x) => x;
 
 ```js
 // bad
-if(...) {
+if (...) {
   ...
-} else if(...) {
+} else if (...) {
   ...
 } else {
   ...
 }
 
 // good
-if(...) {
+if (...) {
   ...
 }
 else if {
@@ -712,12 +718,12 @@ import { func1, func2 } from 'moduleA';
 
 ```js
 // bad
-if(x === undefined) {
+if (x === undefined) {
   ...
 }
 
 // good
-if(x === void 0) {
+if (x === void 0) {
   ...
 }
 ```
@@ -883,7 +889,7 @@ p.then(() => {
 });
 
 function f() {
-  if(...) {
+  if (...) {
     return Promise.resolve(...);
   }
   else {
@@ -901,7 +907,7 @@ p.then(() => {
 
 function f() {
   return Promise.try(() => {
-    if(...) {
+    if (...) {
       return ...;
     }
     else {
@@ -920,20 +926,20 @@ function f() {
 ```js
 // bad
 function odd(n) {
-  if(n === 0) {
+  if (n === 0) {
     return false;
   }
-  if(n === 1) {
+  if (n === 1) {
     return true;
   }
   return !even(n-1);
 }
 
 function even(n) {
-  if(n === 0) {
+  if (n === 0) {
     return true;
   }
-  if(n === 1) {
+  if (n === 1) {
     return false;
   }
   return !odd(n-1);
@@ -942,7 +948,7 @@ function even(n) {
 // good
 function factorial(n) {
   function factorialLoop(n, acc) {
-    if(n === 1) {
+    if (n === 1) {
       return acc;
     }
     else {
